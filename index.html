@@ -99,11 +99,11 @@
       transition: background .3s;
     }
     .lang-btn {
-      font-size: .75rem; font-weight: 700; padding: 5px 11px;
+      font-size: .72rem; font-weight: 700; padding: 5px 9px;
       border: none; border-radius: 50px; cursor: pointer;
       font-family: inherit; transition: background .2s, color .2s;
       background: none; color: var(--text2);
-      display: flex; align-items: center; gap: 5px;
+      display: flex; align-items: center; gap: 4px;
     }
     .lang-btn.active {
       background: var(--red); color: #fff;
@@ -395,16 +395,16 @@
       <line x1="62" y1="66" x2="80" y2="82" stroke="var(--text)" stroke-width="8" stroke-linecap="round"/>
     </svg>
     <div class="nav-logo-text">
-      <div class="sub" data-de="Meisterbetrieb" data-en="Master Craftsman">Meisterbetrieb</div>
+      <div class="sub" data-de="Meisterbetrieb" data-en="Master Craftsman" data-pl="Mistrz budowlany" data-cz="Mistrovský podnik">Meisterbetrieb</div>
       <div class="name">QUADRIGA BAU GMBH</div>
     </div>
   </a>
 
   <ul class="nav-links">
-    <li><button onclick="showPage('home')" id="nav-home" class="active" data-de="Start" data-en="Home">Start</button></li>
-    <li><button onclick="showPage('leistungen')" id="nav-leistungen" data-de="Leistungen" data-en="Services">Leistungen</button></li>
-    <li><button onclick="showPage('ueber')" id="nav-ueber" data-de="Über uns" data-en="About">Über uns</button></li>
-    <li><button onclick="showPage('kontakt')" id="nav-kontakt" data-de="Kontakt" data-en="Contact">Kontakt</button></li>
+    <li><button onclick="showPage('home')" id="nav-home" class="active" data-de="Start" data-en="Home" data-pl="Start" data-cz="Start">Start</button></li>
+    <li><button onclick="showPage('leistungen')" id="nav-leistungen" data-de="Leistungen" data-en="Services" data-pl="Usługi" data-cz="Služby">Leistungen</button></li>
+    <li><button onclick="showPage('ueber')" id="nav-ueber" data-de="Über uns" data-en="About" data-pl="O nas" data-cz="O nás">Über uns</button></li>
+    <li><button onclick="showPage('kontakt')" id="nav-kontakt" data-de="Kontakt" data-en="Contact" data-pl="Kontakt" data-cz="Kontakt">Kontakt</button></li>
   </ul>
 
   <div class="nav-controls">
@@ -412,6 +412,8 @@
     <div class="lang-toggle">
       <button class="lang-btn active" id="lang-de" onclick="setLang('de')">🇩🇪 DE</button>
       <button class="lang-btn" id="lang-en" onclick="setLang('en')">🇬🇧 EN</button>
+      <button class="lang-btn" id="lang-pl" onclick="setLang('pl')">🇵🇱 PL</button>
+      <button class="lang-btn" id="lang-cz" onclick="setLang('cz')">🇨🇿 CZ</button>
     </div>
 
     <!-- Dark Mode Toggle -->
@@ -428,14 +430,16 @@
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
-  <button onclick="showPage('home');closeMobileMenu()" data-de="Start" data-en="Home">Start</button>
-  <button onclick="showPage('leistungen');closeMobileMenu()" data-de="Leistungen" data-en="Services">Leistungen</button>
-  <button onclick="showPage('ueber');closeMobileMenu()" data-de="Über uns" data-en="About">Über uns</button>
-  <button onclick="showPage('kontakt');closeMobileMenu()" data-de="Kontakt" data-en="Contact">Kontakt</button>
+  <button onclick="showPage('home');closeMobileMenu()" data-de="Start" data-en="Home" data-pl="Start" data-cz="Start">Start</button>
+  <button onclick="showPage('leistungen');closeMobileMenu()" data-de="Leistungen" data-en="Services" data-pl="Usługi" data-cz="Služby">Leistungen</button>
+  <button onclick="showPage('ueber');closeMobileMenu()" data-de="Über uns" data-en="About" data-pl="O nas" data-cz="O nás">Über uns</button>
+  <button onclick="showPage('kontakt');closeMobileMenu()" data-de="Kontakt" data-en="Contact" data-pl="Kontakt" data-cz="Kontakt">Kontakt</button>
   <div class="mob-controls">
     <div class="lang-toggle">
       <button class="lang-btn active" id="mob-lang-de" onclick="setLang('de')">🇩🇪 DE</button>
       <button class="lang-btn" id="mob-lang-en" onclick="setLang('en')">🇬🇧 EN</button>
+      <button class="lang-btn" id="mob-lang-pl" onclick="setLang('pl')">🇵🇱 PL</button>
+      <button class="lang-btn" id="mob-lang-cz" onclick="setLang('cz')">🇨🇿 CZ</button>
     </div>
     <button class="theme-toggle" onclick="toggleTheme()" aria-label="Dark Mode">
       <span class="theme-icon sun">☀️</span>
@@ -455,18 +459,18 @@
   <div class="page active" id="page-home">
     <section class="hero">
       <div class="hero-content">
-        <div class="hero-badge" data-de="✦ Meisterbetrieb · Dresden-Weißig" data-en="✦ Master Craftsman · Dresden-Weißig">✦ Meisterbetrieb · Dresden-Weißig</div>
-        <h1><span class="hl" data-de="Maurer-, Putz-" data-en="Masonry, Plaster-">Maurer-, Putz-</span><br/><span data-de="und Betonarbeiten" data-en="& Concrete Work">und Betonarbeiten</span></h1>
+        <div class="hero-badge" data-de="✦ Meisterbetrieb · Dresden-Weißig" data-en="✦ Master Craftsman · Dresden-Weißig" data-pl="✦ Mistrz budowlany · Dresden-Weißig" data-cz="✦ Mistrovský podnik · Dresden-Weißig">✦ Meisterbetrieb · Dresden-Weißig</div>
+        <h1><span class="hl" data-de="Maurer-, Putz-" data-en="Masonry, Plaster-" data-pl="Murarstwo, tynk-" data-cz="Zednické, omítkářské-">Maurer-, Putz-</span><br/><span data-de="und Betonarbeiten" data-en="& Concrete Work" data-pl="i prace betonowe" data-cz="a betonářské práce">und Betonarbeiten</span></h1>
         <div class="hero-sub">Quadriga Bau GmbH</div>
-        <p data-de="Ihr zuverlässiger Partner für solide Bauarbeiten in Dresden und Umgebung. Von Neubau bis Sanierung – wir liefern Qualität, die hält." data-en="Your reliable partner for solid construction work in Dresden and the surrounding area. From new builds to renovation – we deliver quality that lasts.">Ihr zuverlässiger Partner für solide Bauarbeiten in Dresden und Umgebung. Von Neubau bis Sanierung – wir liefern Qualität, die hält.</p>
+        <p data-de="Ihr zuverlässiger Partner für solide Bauarbeiten in Dresden und Umgebung. Von Neubau bis Sanierung – wir liefern Qualität, die hält." data-en="Your reliable partner for solid construction work in Dresden and the surrounding area. From new builds to renovation – we deliver quality that lasts." data-pl="Twój niezawodny partner w solidnych pracach budowlanych w Dreźnie i okolicach. Od nowych budowli po remonty – dostarczamy jakość, która trwa." data-cz="Váš spolehlivý partner pro solidní stavební práce v Drážďanech a okolí. Od novostavby po rekonstrukci – dodáváme kvalitu, která vydrží.">Ihr zuverlässiger Partner für solide Bauarbeiten in Dresden und Umgebung. Von Neubau bis Sanierung – wir liefern Qualität, die hält.</p>
         <div class="hero-actions">
-          <button class="btn-primary" onclick="showPage('kontakt')" data-de="Jetzt anfragen →" data-en="Get a quote →">Jetzt anfragen →</button>
-          <button class="btn-secondary" onclick="showPage('leistungen')" data-de="Leistungen ansehen" data-en="Our Services">Leistungen ansehen</button>
+          <button class="btn-primary" onclick="showPage('kontakt')" data-de="Jetzt anfragen →" data-en="Get a quote →" data-pl="Zapytaj teraz →" data-cz="Nezávazně se zeptat →">Jetzt anfragen →</button>
+          <button class="btn-secondary" onclick="showPage('leistungen')" data-de="Leistungen ansehen" data-en="Our Services" data-pl="Nasze usługi" data-cz="Naše služby">Leistungen ansehen</button>
         </div>
         <div class="hero-stats">
-          <div><span class="stat-num">25+</span><span class="stat-label" data-de="Jahre Erfahrung" data-en="Years Experience">Jahre Erfahrung</span></div>
-          <div><span class="stat-num">1.000+</span><span class="stat-label" data-de="Projekte" data-en="Projects">Projekte</span></div>
-          <div><span class="stat-num">100%</span><span class="stat-label" data-de="Meisterbetrieb" data-en="Master Craftsman">Meisterbetrieb</span></div>
+          <div><span class="stat-num">25+</span><span class="stat-label" data-de="Jahre Erfahrung" data-en="Years Experience" data-pl="Lat doświadczenia" data-cz="Let zkušeností">Jahre Erfahrung</span></div>
+          <div><span class="stat-num">1.000+</span><span class="stat-label" data-de="Projekte" data-en="Projects" data-pl="Projektów" data-cz="Projektů">Projekte</span></div>
+          <div><span class="stat-num">100%</span><span class="stat-label" data-de="Meisterbetrieb" data-en="Master Craftsman" data-pl="Mistrz budowlany" data-cz="Mistrovský podnik">Meisterbetrieb</span></div>
         </div>
       </div>
       <div class="hero-visual-side">
@@ -485,10 +489,10 @@
       </div>
     </section>
     <div class="stripe">
-      <div class="stripe-item"><span class="stripe-num">25+</span><div class="stripe-label" data-de="Jahre im Baugewerbe" data-en="Years in Construction">Jahre im Baugewerbe</div></div>
-      <div class="stripe-item"><span class="stripe-num">8</span><div class="stripe-label" data-de="Leistungsbereiche" data-en="Service Areas">Leistungsbereiche</div></div>
-      <div class="stripe-item"><span class="stripe-num">Mo–Fr</span><div class="stripe-label" data-de="Erreichbar 7–17 Uhr" data-en="Available 7am–5pm">Erreichbar 7–17 Uhr</div></div>
-      <div class="stripe-item"><span class="stripe-num">100%</span><div class="stripe-label" data-de="Qualitätsgarantie" data-en="Quality Guarantee">Qualitätsgarantie</div></div>
+      <div class="stripe-item"><span class="stripe-num">25+</span><div class="stripe-label" data-de="Jahre im Baugewerbe" data-en="Years in Construction" data-pl="Lat w budownictwie" data-cz="Let ve stavebnictví">Jahre im Baugewerbe</div></div>
+      <div class="stripe-item"><span class="stripe-num">8</span><div class="stripe-label" data-de="Leistungsbereiche" data-en="Service Areas" data-pl="Obszarów usług" data-cz="Oblast služeb">Leistungsbereiche</div></div>
+      <div class="stripe-item"><span class="stripe-num">Mo–Fr</span><div class="stripe-label" data-de="Erreichbar 7–17 Uhr" data-en="Available 7am–5pm" data-pl="Dostępni 7–17" data-cz="Dostupní 7–17 hod.">Erreichbar 7–17 Uhr</div></div>
+      <div class="stripe-item"><span class="stripe-num">100%</span><div class="stripe-label" data-de="Qualitätsgarantie" data-en="Quality Guarantee" data-pl="Gwarancja jakości" data-cz="Záruka kvality">Qualitätsgarantie</div></div>
     </div>
   </div>
 
@@ -496,22 +500,22 @@
   <div class="page" id="page-leistungen">
     <div class="page-inner">
       <div class="page-header">
-        <div class="section-label" data-de="Was wir bieten" data-en="What we offer">Was wir bieten</div>
-        <h2 class="section-title" data-de="Unsere Leistungen" data-en="Our Services">Unsere Leistungen</h2>
-        <p class="section-sub" data-de="Als Meisterbetrieb bieten wir das komplette Spektrum rund um Maurer-, Putz- und Betonarbeiten – alles aus einer Hand." data-en="As a master craftsman business, we offer the complete spectrum of masonry, plastering and concrete work – all from one source.">Als Meisterbetrieb bieten wir das komplette Spektrum rund um Maurer-, Putz- und Betonarbeiten – alles aus einer Hand.</p>
+        <div class="section-label" data-de="Was wir bieten" data-en="What we offer" data-pl="Co oferujemy" data-cz="Co nabízíme">Was wir bieten</div>
+        <h2 class="section-title" data-de="Unsere Leistungen" data-en="Our Services" data-pl="Nasze usługi" data-cz="Naše služby">Unsere Leistungen</h2>
+        <p class="section-sub" data-de="Als Meisterbetrieb bieten wir das komplette Spektrum rund um Maurer-, Putz- und Betonarbeiten – alles aus einer Hand." data-en="As a master craftsman business, we offer the complete spectrum of masonry, plastering and concrete work – all from one source." data-pl="Jako firma mistrzowska oferujemy pełne spektrum robót murarskich, tynkarskich i betonowych – wszystko z jednej ręki." data-cz="Jako mistrovský podnik nabízíme kompletní spektrum zednických, omítkářských a betonářských prací – vše z jedné ruky.">Als Meisterbetrieb bieten wir das komplette Spektrum rund um Maurer-, Putz- und Betonarbeiten – alles aus einer Hand.</p>
       </div>
       <div class="service-list-grid">
         <div class="service-col">
-          <div class="service-item"><div class="sdot"></div><span data-de="Maurer-, Putz- und Betonarbeiten" data-en="Masonry, Plaster & Concrete Work">Maurer-, Putz- und Betonarbeiten</span></div>
-          <div class="service-item"><div class="sdot"></div><span data-de="Um-, Aus- und Neubau" data-en="Conversion, Extension & New Build">Um-, Aus- und Neubau</span></div>
-          <div class="service-item"><div class="sdot"></div><span data-de="Pflasterarbeiten und Wegebau" data-en="Paving & Pathway Construction">Pflasterarbeiten und Wegebau</span></div>
-          <div class="service-item"><div class="sdot"></div><span data-de="Tiefbauarbeiten" data-en="Civil Engineering">Tiefbauarbeiten</span></div>
+          <div class="service-item"><div class="sdot"></div><span data-de="Maurer-, Putz- und Betonarbeiten" data-en="Masonry, Plaster & Concrete Work" data-pl="Roboty murarskie, tynkarskie i betonowe" data-cz="Zednické, omítkářské a betonářské práce">Maurer-, Putz- und Betonarbeiten</span></div>
+          <div class="service-item"><div class="sdot"></div><span data-de="Um-, Aus- und Neubau" data-en="Conversion, Extension & New Build" data-pl="Przebudowa, rozbudowa i nowe budownictwo" data-cz="Přestavba, přístavba a novostavba">Um-, Aus- und Neubau</span></div>
+          <div class="service-item"><div class="sdot"></div><span data-de="Pflasterarbeiten und Wegebau" data-en="Paving & Pathway Construction" data-pl="Brukowanie i budowa dróg" data-cz="Dlažební práce a výstavba cest">Pflasterarbeiten und Wegebau</span></div>
+          <div class="service-item"><div class="sdot"></div><span data-de="Tiefbauarbeiten" data-en="Civil Engineering" data-pl="Roboty ziemne" data-cz="Zemní práce">Tiefbauarbeiten</span></div>
         </div>
         <div class="service-col">
-          <div class="service-item"><div class="sdot"></div><span data-de="Fassadensanierung" data-en="Facade Renovation">Fassadensanierung</span></div>
-          <div class="service-item"><div class="sdot"></div><span data-de="Trockenbau sowie Malerarbeiten aller Art" data-en="Drywall & Painting of All Kinds">Trockenbau sowie Malerarbeiten aller Art</span></div>
-          <div class="service-item"><div class="sdot"></div><span data-de="Abdicht- und Isolierarbeiten" data-en="Waterproofing & Insulation">Abdicht- und Isolierarbeiten</span></div>
-          <div class="service-item"><div class="sdot"></div><span data-de="Außenanlagen" data-en="Outdoor Facilities">Außenanlagen</span></div>
+          <div class="service-item"><div class="sdot"></div><span data-de="Fassadensanierung" data-en="Facade Renovation" data-pl="Renowacja elewacji" data-cz="Sanace fasád">Fassadensanierung</span></div>
+          <div class="service-item"><div class="sdot"></div><span data-de="Trockenbau sowie Malerarbeiten aller Art" data-en="Drywall & Painting of All Kinds" data-pl="Zabudowy GK i prace malarskie wszelkiego rodzaju" data-cz="Sádrokartonové práce a malířství všeho druhu">Trockenbau sowie Malerarbeiten aller Art</span></div>
+          <div class="service-item"><div class="sdot"></div><span data-de="Abdicht- und Isolierarbeiten" data-en="Waterproofing & Insulation" data-pl="Prace uszczelniające i izolacyjne" data-cz="Hydroizolační a izolační práce">Abdicht- und Isolierarbeiten</span></div>
+          <div class="service-item"><div class="sdot"></div><span data-de="Außenanlagen" data-en="Outdoor Facilities" data-pl="Zagospodarowanie terenu" data-cz="Venkovní plochy">Außenanlagen</span></div>
         </div>
       </div>
     </div>
@@ -542,17 +546,17 @@
           </div>
         </div>
         <div>
-          <div class="section-label" data-de="Über uns" data-en="About us">Über uns</div>
-          <h2 class="section-title" data-de="Ihr Meisterbetrieb in Dresden-Weißig" data-en="Your Master Craftsman in Dresden-Weißig">Ihr Meisterbetrieb in<br/>Dresden-Weißig</h2>
-          <p class="section-sub" data-de="Die Quadriga Bau GmbH steht für solides Handwerk, termingerechte Ausführung und faire Preise – seit über 25 Jahren in der Region Dresden verankert." data-en="Quadriga Bau GmbH stands for solid craftsmanship, on-time delivery and fair prices – rooted in the Dresden region for over 25 years.">Die Quadriga Bau GmbH steht für solides Handwerk, termingerechte Ausführung und faire Preise – seit über 25 Jahren in der Region Dresden verankert.</p>
+          <div class="section-label" data-de="Über uns" data-en="About us" data-pl="O nas" data-cz="O nás">Über uns</div>
+          <h2 class="section-title" data-de="Ihr Meisterbetrieb in Dresden-Weißig" data-en="Your Master Craftsman in Dresden-Weißig" data-pl="Twoja firma mistrzowska w Dresden-Weißig" data-cz="Váš mistrovský podnik v Dresden-Weißig">Ihr Meisterbetrieb in<br/>Dresden-Weißig</h2>
+          <p class="section-sub" data-de="Die Quadriga Bau GmbH steht für solides Handwerk, termingerechte Ausführung und faire Preise – seit über 25 Jahren in der Region Dresden verankert." data-en="Quadriga Bau GmbH stands for solid craftsmanship, on-time delivery and fair prices – rooted in the Dresden region for over 25 years." data-pl="Quadriga Bau GmbH to solidne rzemiosło, terminowa realizacja i uczciwe ceny – zakorzeniona w regionie Drezna od ponad 25 lat." data-cz="Quadriga Bau GmbH stojí za solidním řemeslem, včasnou realizací a férovými cenami – zakořenění v regionu Drážďan déle než 25 let.">Die Quadriga Bau GmbH steht für solides Handwerk, termingerechte Ausführung und faire Preise – seit über 25 Jahren in der Region Dresden verankert.</p>
           <ul class="about-list">
-            <li><div class="chk">✓</div><span data-de="Eingetragener Meisterbetrieb mit Qualitätssicherung" data-en="Registered master craftsman business with quality assurance">Eingetragener Meisterbetrieb mit Qualitätssicherung</span></li>
-            <li><div class="chk">✓</div><span data-de="Lokales Team aus erfahrenen Fachleuten" data-en="Local team of experienced professionals">Lokales Team aus erfahrenen Fachleuten</span></li>
-            <li><div class="chk">✓</div><span data-de="Transparente Angebote ohne versteckte Kosten" data-en="Transparent quotes with no hidden costs">Transparente Angebote ohne versteckte Kosten</span></li>
-            <li><div class="chk">✓</div><span data-de="Termintreue und saubere Baustellen" data-en="On-time delivery and clean worksites">Termintreue und saubere Baustellen</span></li>
-            <li><div class="chk">✓</div><span data-de="Persönliche Beratung vor Ort in Dresden und Umgebung" data-en="Personal consultation on-site in Dresden and surroundings">Persönliche Beratung vor Ort in Dresden und Umgebung</span></li>
+            <li><div class="chk">✓</div><span data-de="Eingetragener Meisterbetrieb mit Qualitätssicherung" data-en="Registered master craftsman business with quality assurance" data-pl="Zarejestrowana firma mistrzowska z zapewnieniem jakości" data-cz="Registrovaný mistrovský podnik se zajištěním kvality">Eingetragener Meisterbetrieb mit Qualitätssicherung</span></li>
+            <li><div class="chk">✓</div><span data-de="Lokales Team aus erfahrenen Fachleuten" data-en="Local team of experienced professionals" data-pl="Lokalny zespół doświadczonych specjalistów" data-cz="Místní tým zkušených odborníků">Lokales Team aus erfahrenen Fachleuten</span></li>
+            <li><div class="chk">✓</div><span data-de="Transparente Angebote ohne versteckte Kosten" data-en="Transparent quotes with no hidden costs" data-pl="Przejrzyste oferty bez ukrytych kosztów" data-cz="Transparentní nabídky bez skrytých nákladů">Transparente Angebote ohne versteckte Kosten</span></li>
+            <li><div class="chk">✓</div><span data-de="Termintreue und saubere Baustellen" data-en="On-time delivery and clean worksites" data-pl="Terminowość i czyste place budowy" data-cz="Dodržování termínů a čisté staveniště">Termintreue und saubere Baustellen</span></li>
+            <li><div class="chk">✓</div><span data-de="Persönliche Beratung vor Ort in Dresden und Umgebung" data-en="Personal consultation on-site in Dresden and surroundings" data-pl="Osobiste doradztwo na miejscu w Dreźnie i okolicach" data-cz="Osobní poradenství přímo na místě v Drážďanech a okolí">Persönliche Beratung vor Ort in Dresden und Umgebung</span></li>
           </ul>
-          <button class="btn-primary" onclick="showPage('kontakt')" data-de="Kontakt aufnehmen →" data-en="Get in touch →" style="margin-top:8px;">Kontakt aufnehmen →</button>
+          <button class="btn-primary" onclick="showPage('kontakt')" data-de="Kontakt aufnehmen →" data-en="Get in touch →" data-pl="Skontaktuj się →" data-cz="Kontaktujte nás →" style="margin-top:8px;">Kontakt aufnehmen →</button>
         </div>
       </div>
     </div>
@@ -562,48 +566,48 @@
   <div class="page" id="page-kontakt">
     <div class="page-inner">
       <div class="page-header">
-        <div class="section-label" data-de="Kontakt" data-en="Contact">Kontakt</div>
-        <h2 class="section-title" data-de="Schreiben Sie uns" data-en="Get in Touch">Schreiben Sie uns</h2>
-        <p class="section-sub" data-de="Kostenlose Beratung und unverbindliches Angebot – wir melden uns innerhalb von 24 Stunden." data-en="Free consultation and no-obligation quote – we'll get back to you within 24 hours.">Kostenlose Beratung und unverbindliches Angebot – wir melden uns innerhalb von 24 Stunden.</p>
+        <div class="section-label" data-de="Kontakt" data-en="Contact" data-pl="Kontakt" data-cz="Kontakt">Kontakt</div>
+        <h2 class="section-title" data-de="Schreiben Sie uns" data-en="Get in Touch" data-pl="Napisz do nas" data-cz="Napište nám">Schreiben Sie uns</h2>
+        <p class="section-sub" data-de="Kostenlose Beratung und unverbindliches Angebot – wir melden uns innerhalb von 24 Stunden." data-en="Free consultation and no-obligation quote – we'll get back to you within 24 hours." data-pl="Bezpłatne doradztwo i oferta bez zobowiązań – odpowiemy w ciągu 24 godzin." data-cz="Bezplatné poradenství a nezávazná nabídka – ozveme se do 24 hodin.">Kostenlose Beratung und unverbindliches Angebot – wir melden uns innerhalb von 24 Stunden.</p>
       </div>
       <div class="contact-grid">
         <div class="contact-card">
-          <h2 class="section-title" data-de="So erreichen Sie uns" data-en="How to reach us">So erreichen<br/>Sie uns</h2>
+          <h2 class="section-title" data-de="So erreichen Sie uns" data-en="How to reach us" data-pl="Jak nas znaleźć" data-cz="Jak nás zastihnout">So erreichen<br/>Sie uns</h2>
           <div class="contact-methods">
-            <div class="cmethod"><div class="cicon">📞</div><div><strong data-de="Telefon" data-en="Phone">Telefon</strong><a href="tel:035126050772">0351 / 26 05 07 72</a></div></div>
-            <div class="cmethod"><div class="cicon">✉</div><div><strong data-de="E-Mail" data-en="Email">E-Mail</strong><a href="mailto:info@quadrigabau.de">info@quadrigabau.de</a></div></div>
-            <div class="cmethod"><div class="cicon">📍</div><div><strong data-de="Adresse" data-en="Address">Adresse</strong><span>Hauptstraße 12<br/>01328 Dresden-Weißig</span></div></div>
-            <div class="cmethod"><div class="cicon">🕐</div><div><strong data-de="Öffnungszeiten" data-en="Opening Hours">Öffnungszeiten</strong><span data-de="Mo – Fr: 7:00 – 17:00 Uhr" data-en="Mon – Fri: 7:00 am – 5:00 pm">Mo – Fr: 7:00 – 17:00 Uhr</span></div></div>
+            <div class="cmethod"><div class="cicon">📞</div><div><strong data-de="Telefon" data-en="Phone" data-pl="Telefon" data-cz="Telefon">Telefon</strong><a href="tel:035126050772">0351 / 26 05 07 72</a></div></div>
+            <div class="cmethod"><div class="cicon">✉</div><div><strong data-de="E-Mail" data-en="Email" data-pl="E-mail" data-cz="E-mail">E-Mail</strong><a href="mailto:info@quadrigabau.de">info@quadrigabau.de</a></div></div>
+            <div class="cmethod"><div class="cicon">📍</div><div><strong data-de="Adresse" data-en="Address" data-pl="Adres" data-cz="Adresa">Adresse</strong><span>Hauptstraße 12<br/>01328 Dresden-Weißig</span></div></div>
+            <div class="cmethod"><div class="cicon">🕐</div><div><strong data-de="Öffnungszeiten" data-en="Opening Hours" data-pl="Godziny otwarcia" data-cz="Otevírací doba">Öffnungszeiten</strong><span data-de="Mo – Fr: 7:00 – 17:00 Uhr" data-en="Mon – Fri: 7:00 am – 5:00 pm" data-pl="Pon – Pt: 7:00 – 17:00" data-cz="Po – Pá: 7:00 – 17:00 hod.">Mo – Fr: 7:00 – 17:00 Uhr</span></div></div>
           </div>
         </div>
         <div class="form-wrap">
-          <h3 data-de="Kostenlose Anfrage stellen" data-en="Send a Free Enquiry">Kostenlose Anfrage stellen</h3>
-          <p data-de="Beschreiben Sie uns Ihr Vorhaben – wir melden uns schnellstmöglich." data-en="Describe your project – we'll get back to you as soon as possible.">Beschreiben Sie uns Ihr Vorhaben – wir melden uns schnellstmöglich.</p>
+          <h3 data-de="Kostenlose Anfrage stellen" data-en="Send a Free Enquiry" data-pl="Wyślij bezpłatne zapytanie" data-cz="Zašlete bezplatnou poptávku">Kostenlose Anfrage stellen</h3>
+          <p data-de="Beschreiben Sie uns Ihr Vorhaben – wir melden uns schnellstmöglich." data-en="Describe your project – we'll get back to you as soon as possible." data-pl="Opisz swój projekt – odpowiemy tak szybko, jak to możliwe." data-cz="Popište svůj projekt – ozveme se co nejdříve.">Beschreiben Sie uns Ihr Vorhaben – wir melden uns schnellstmöglich.</p>
           <div class="form-row">
-            <div class="fg"><label data-de="Vorname" data-en="First Name">Vorname</label><input type="text" id="inp-fname" placeholder="Max"/></div>
-            <div class="fg"><label data-de="Nachname" data-en="Last Name">Nachname</label><input type="text" id="inp-lname" placeholder="Mustermann"/></div>
+            <div class="fg"><label data-de="Vorname" data-en="First Name" data-pl="Imię" data-cz="Jméno">Vorname</label><input type="text" id="inp-fname" placeholder="Max"/></div>
+            <div class="fg"><label data-de="Nachname" data-en="Last Name" data-pl="Nazwisko" data-cz="Příjmení">Nachname</label><input type="text" id="inp-lname" placeholder="Mustermann"/></div>
           </div>
           <div class="form-row">
-            <div class="fg"><label data-de="Telefon" data-en="Phone">Telefon</label><input type="tel" placeholder="0351 / ..."/></div>
-            <div class="fg"><label data-de="E-Mail" data-en="Email">E-Mail</label><input type="email" placeholder="max@beispiel.de"/></div>
+            <div class="fg"><label data-de="Telefon" data-en="Phone" data-pl="Telefon" data-cz="Telefon">Telefon</label><input type="tel" placeholder="0351 / ..."/></div>
+            <div class="fg"><label data-de="E-Mail" data-en="Email" data-pl="E-mail" data-cz="E-mail">E-Mail</label><input type="email" placeholder="max@beispiel.de"/></div>
           </div>
           <div class="fg">
-            <label data-de="Leistung" data-en="Service">Leistung</label>
+            <label data-de="Leistung" data-en="Service" data-pl="Usługa" data-cz="Služba">Leistung</label>
             <select id="service-select">
-              <option value="" data-de="Bitte wählen..." data-en="Please select...">Bitte wählen...</option>
-              <option data-de="Maurer-, Putz- und Betonarbeiten" data-en="Masonry, Plaster & Concrete Work">Maurer-, Putz- und Betonarbeiten</option>
-              <option data-de="Um-, Aus- und Neubau" data-en="Conversion, Extension & New Build">Um-, Aus- und Neubau</option>
-              <option data-de="Pflasterarbeiten und Wegebau" data-en="Paving & Pathway Construction">Pflasterarbeiten und Wegebau</option>
-              <option data-de="Tiefbauarbeiten" data-en="Civil Engineering">Tiefbauarbeiten</option>
-              <option data-de="Fassadensanierung" data-en="Facade Renovation">Fassadensanierung</option>
-              <option data-de="Trockenbau und Malerarbeiten" data-en="Drywall & Painting">Trockenbau und Malerarbeiten</option>
-              <option data-de="Abdicht- und Isolierarbeiten" data-en="Waterproofing & Insulation">Abdicht- und Isolierarbeiten</option>
-              <option data-de="Außenanlagen" data-en="Outdoor Facilities">Außenanlagen</option>
-              <option data-de="Sonstiges" data-en="Other">Sonstiges</option>
+              <option value="" data-de="Bitte wählen..." data-en="Please select..." data-pl="Proszę wybrać..." data-cz="Prosím vyberte...">Bitte wählen...</option>
+              <option data-de="Maurer-, Putz- und Betonarbeiten" data-en="Masonry, Plaster & Concrete Work" data-pl="Roboty murarskie, tynkarskie i betonowe" data-cz="Zednické, omítkářské a betonářské práce">Maurer-, Putz- und Betonarbeiten</option>
+              <option data-de="Um-, Aus- und Neubau" data-en="Conversion, Extension & New Build" data-pl="Przebudowa, rozbudowa i nowe budownictwo" data-cz="Přestavba, přístavba a novostavba">Um-, Aus- und Neubau</option>
+              <option data-de="Pflasterarbeiten und Wegebau" data-en="Paving & Pathway Construction" data-pl="Brukowanie i budowa dróg" data-cz="Dlažební práce a výstavba cest">Pflasterarbeiten und Wegebau</option>
+              <option data-de="Tiefbauarbeiten" data-en="Civil Engineering" data-pl="Roboty ziemne" data-cz="Zemní práce">Tiefbauarbeiten</option>
+              <option data-de="Fassadensanierung" data-en="Facade Renovation" data-pl="Renowacja elewacji" data-cz="Sanace fasád">Fassadensanierung</option>
+              <option data-de="Trockenbau und Malerarbeiten" data-en="Drywall & Painting" data-pl="Zabudowy GK i prace malarskie" data-cz="Sádrokartonové práce a malířství">Trockenbau und Malerarbeiten</option>
+              <option data-de="Abdicht- und Isolierarbeiten" data-en="Waterproofing & Insulation" data-pl="Prace uszczelniające i izolacyjne" data-cz="Hydroizolační a izolační práce">Abdicht- und Isolierarbeiten</option>
+              <option data-de="Außenanlagen" data-en="Outdoor Facilities" data-pl="Zagospodarowanie terenu" data-cz="Venkovní plochy">Außenanlagen</option>
+              <option data-de="Sonstiges" data-en="Other" data-pl="Inne" data-cz="Ostatní">Sonstiges</option>
             </select>
           </div>
-          <div class="fg"><label data-de="Ihre Nachricht" data-en="Your Message">Ihre Nachricht</label><textarea id="inp-msg" placeholder="Beschreiben Sie kurz Ihr Projekt..."></textarea></div>
-          <button class="fsub" id="formBtn" data-de="Anfrage absenden →" data-en="Send Enquiry →">Anfrage absenden →</button>
+          <div class="fg"><label data-de="Ihre Nachricht" data-en="Your Message" data-pl="Twoja wiadomość" data-cz="Vaše zpráva">Ihre Nachricht</label><textarea id="inp-msg" placeholder="Beschreiben Sie kurz Ihr Projekt..."></textarea></div>
+          <button class="fsub" id="formBtn" data-de="Anfrage absenden →" data-en="Send Enquiry →" data-pl="Wyślij zapytanie →" data-cz="Odeslat poptávku →">Anfrage absenden →</button>
         </div>
       </div>
     </div>
@@ -644,11 +648,17 @@
   /* ── LANGUAGE ── */
   let lang = localStorage.getItem('lang') || 'de';
 
+  const msgPlaceholders = {
+    de: 'Beschreiben Sie kurz Ihr Projekt...',
+    en: 'Briefly describe your project...',
+    pl: 'Krótko opisz swój projekt...',
+    cz: 'Stručně popište svůj projekt...'
+  };
+
   function setLang(l) {
     lang = l;
     localStorage.setItem('lang', l);
 
-    // Update all data-de / data-en elements
     document.querySelectorAll('[data-de]').forEach(el => {
       const val = el.getAttribute('data-' + l);
       if (val) {
@@ -660,26 +670,22 @@
       }
     });
 
-    // Update select options
     document.querySelectorAll('select option[data-de]').forEach(opt => {
       const val = opt.getAttribute('data-' + l);
       if (val) opt.textContent = val;
     });
 
-    // Update placeholders
     const msgArea = document.getElementById('inp-msg');
-    if (msgArea) msgArea.placeholder = l === 'de' ? 'Beschreiben Sie kurz Ihr Projekt...' : 'Briefly describe your project...';
+    if (msgArea) msgArea.placeholder = msgPlaceholders[l] || msgPlaceholders.de;
 
-    // Lang button states
     document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
     document.querySelectorAll('#lang-' + l + ', #mob-lang-' + l).forEach(b => b.classList.add('active'));
 
-    // Update html lang attr
     document.documentElement.lang = l;
   }
 
   // Apply saved lang on load
-  if (lang === 'en') setLang('en');
+  if (lang !== 'de') setLang(lang);
 
   /* ── HAMBURGER ── */
   const hamburger = document.getElementById('hamburger');
@@ -696,12 +702,14 @@
   }
 
   /* ── FORM ── */
+  const formSuccess = { de: '✓ Anfrage erfolgreich gesendet!', en: '✓ Enquiry sent successfully!', pl: '✓ Zapytanie wysłane!', cz: '✓ Poptávka odeslána!' };
+  const formLabel  = { de: 'Anfrage absenden →', en: 'Send Enquiry →', pl: 'Wyślij zapytanie →', cz: 'Odeslat poptávku →' };
+
   document.getElementById('formBtn').addEventListener('click', function() {
-    const ok = lang === 'de' ? '✓ Anfrage erfolgreich gesendet!' : '✓ Enquiry sent successfully!';
-    this.textContent = ok;
+    this.textContent = formSuccess[lang] || formSuccess.de;
     this.style.background = '#16a34a';
     setTimeout(() => {
-      this.textContent = lang === 'de' ? 'Anfrage absenden →' : 'Send Enquiry →';
+      this.textContent = formLabel[lang] || formLabel.de;
       this.style.background = '';
     }, 3500);
   });
