@@ -284,23 +284,6 @@
     .service-item:last-child { border-bottom: none; }
     .sdot { width: 8px; height: 8px; background: var(--red); border-radius: 1px; flex-shrink: 0; }
 
-    .services-cards {
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(250px,1fr));
-      gap: 2px; border: 2px solid var(--text); transition: border-color .3s;
-    }
-    .scard {
-      padding: 28px 24px; background: var(--card-bg); position: relative; cursor: default;
-      transition: background .25s; border: 2px solid transparent;
-    }
-    .scard::after {
-      content: ''; position: absolute; bottom: 0; left: 24px; right: 24px;
-      height: 3px; background: var(--red); transform: scaleX(0); transform-origin: left; transition: transform .3s;
-    }
-    .scard:hover { background: var(--card-hover); }
-    .scard:hover::after { transform: scaleX(1); }
-    .scard-icon { font-size: 1.7rem; margin-bottom: 13px; display: block; }
-    .scard h3 { font-size: .92rem; font-weight: 800; margin-bottom: 7px; color: var(--text); }
-    .scard p { font-size: .83rem; color: var(--text2); line-height: 1.6; }
 
     /* ════════════ ÜBER UNS ════════════ */
     .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
@@ -530,16 +513,6 @@
           <div class="service-item"><div class="sdot"></div><span data-de="Abdicht- und Isolierarbeiten" data-en="Waterproofing & Insulation">Abdicht- und Isolierarbeiten</span></div>
           <div class="service-item"><div class="sdot"></div><span data-de="Außenanlagen" data-en="Outdoor Facilities">Außenanlagen</span></div>
         </div>
-      </div>
-      <div class="services-cards">
-        <div class="scard"><span class="scard-icon">🧱</span><h3 data-de="Maurer-, Putz- & Betonarbeiten" data-en="Masonry, Plaster & Concrete">Maurer-, Putz- & Betonarbeiten</h3><p data-de="Fundamente, Wände, Verputzarbeiten innen und außen – handwerklich exakt und dauerhaft stabil." data-en="Foundations, walls, plastering indoors and outdoors – craftsman-precise and permanently stable.">Fundamente, Wände, Verputzarbeiten innen und außen – handwerklich exakt und dauerhaft stabil.</p></div>
-        <div class="scard"><span class="scard-icon">🏗️</span><h3 data-de="Um-, Aus- und Neubau" data-en="Conversion, Extension & New Build">Um-, Aus- und Neubau</h3><p data-de="Ob Anbau, Aufstockung oder kompletter Neubau – wir planen und realisieren Ihr Bauprojekt." data-en="Whether extension, additional storey or complete new build – we plan and realise your project.">Ob Anbau, Aufstockung oder kompletter Neubau – wir planen und realisieren Ihr Bauprojekt.</p></div>
-        <div class="scard"><span class="scard-icon">🛤️</span><h3 data-de="Pflasterarbeiten & Wegebau" data-en="Paving & Pathways">Pflasterarbeiten & Wegebau</h3><p data-de="Einfahrten, Terrassen, Gehwege – fachgerecht gepflastert für ein ansprechendes Außenbild." data-en="Driveways, patios, pathways – professionally paved for an attractive exterior.">Einfahrten, Terrassen, Gehwege – fachgerecht gepflastert für ein ansprechendes Außenbild.</p></div>
-        <div class="scard"><span class="scard-icon">⛏️</span><h3 data-de="Tiefbauarbeiten" data-en="Civil Engineering">Tiefbauarbeiten</h3><p data-de="Erdarbeiten, Kanalarbeiten und Leitungsverlegung – professionell und nach Vorschrift." data-en="Earthworks, drainage and pipe laying – professional and compliant with regulations.">Erdarbeiten, Kanalarbeiten und Leitungsverlegung – professionell und nach Vorschrift.</p></div>
-        <div class="scard"><span class="scard-icon">🏢</span><h3 data-de="Fassadensanierung" data-en="Facade Renovation">Fassadensanierung</h3><p data-de="Altputz entfernen, Wärmedämmung, Neuanstrich – wir holen das Beste aus Ihrer Fassade." data-en="Remove old plaster, insulation, new coat – we get the best out of your facade.">Altputz entfernen, Wärmedämmung, Neuanstrich – wir holen das Beste aus Ihrer Fassade.</p></div>
-        <div class="scard"><span class="scard-icon">🎨</span><h3 data-de="Trockenbau & Malerarbeiten" data-en="Drywall & Painting">Trockenbau & Malerarbeiten</h3><p data-de="Trennwände, Deckenverkleidungen, Anstriche innen wie außen – schnell und sauber." data-en="Partition walls, ceiling cladding, interior and exterior painting – fast and clean.">Trennwände, Deckenverkleidungen, Anstriche innen wie außen – schnell und sauber.</p></div>
-        <div class="scard"><span class="scard-icon">💧</span><h3 data-de="Abdicht- & Isolierarbeiten" data-en="Waterproofing & Insulation">Abdicht- & Isolierarbeiten</h3><p data-de="Keller, Flachdach, Fundament – dauerhafter Schutz vor Feuchtigkeit und Kälte." data-en="Basement, flat roof, foundation – permanent protection against moisture and cold.">Keller, Flachdach, Fundament – dauerhafter Schutz vor Feuchtigkeit und Kälte.</p></div>
-        <div class="scard"><span class="scard-icon">🌿</span><h3 data-de="Außenanlagen" data-en="Outdoor Facilities">Außenanlagen</h3><p data-de="Mauern, Stufen, Stützmauern und mehr – Gestaltung Ihrer Außenbereiche." data-en="Walls, steps, retaining walls and more – design of your outdoor areas.">Mauern, Stufen, Stützmauern und mehr – Gestaltung Ihrer Außenbereiche.</p></div>
       </div>
     </div>
   </div>
