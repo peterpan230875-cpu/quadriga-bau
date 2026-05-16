@@ -338,10 +338,37 @@
     .fsub:hover { background: var(--red-dark); }
 
     /* ── RESPONSIVE ── */
+    /* ── MOBILE LANG GRID (im Menü) ── */
+    .mob-lang-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 10px; width: 100%; margin-top: 8px;
+    }
+    .mob-lang-grid .lang-btn {
+      justify-content: center; padding: 13px 10px;
+      border-radius: 8px; font-size: .95rem; font-weight: 700;
+      background: var(--surface2); color: var(--text2);
+      border: 1.5px solid var(--border);
+    }
+    .mob-lang-grid .lang-btn.active {
+      background: var(--red); color: #fff;
+      border-color: var(--red);
+      box-shadow: 0 3px 12px rgba(227,6,19,0.3);
+    }
+    .mob-theme-row {
+      display: flex; align-items: center; justify-content: space-between;
+      width: 100%; padding: 14px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      margin: 4px 0;
+    }
+    .mob-theme-label { font-size: .95rem; font-weight: 700; color: var(--text); }
+
     @media (max-width: 900px) {
       nav { padding: 0 4vw; }
       .nav-links { display: none; }
       .nav-cta { display: none; }
+      /* Sprachumschalter aus Navbar ausblenden – ist im Menü */
+      .nav-lang { display: none; }
       .hamburger { display: flex; }
       .fab-call { display: flex; }
       .hero { grid-template-columns: 1fr; }
@@ -358,10 +385,10 @@
     @media (max-width: 580px) {
       .logo-svg { width: 36px; height: 36px; }
       .nav-logo-text .name { font-size: .88rem; }
+      .nav-logo-text .sub { font-size: .55rem; }
       .theme-toggle { width: 46px; height: 25px; }
       .theme-toggle::before { width: 17px; height: 17px; }
       [data-theme="dark"] .theme-toggle::before { transform: translateX(21px); }
-      .lang-btn { font-size: .68rem; padding: 4px 8px; }
       .hero-content { padding: 48px 5vw; }
       .hero h1 { font-size: 1.85rem; }
       .hero-actions { flex-direction: column; }
@@ -369,7 +396,6 @@
       .hero-stats { gap: 18px; }
       .stripe { grid-template-columns: 1fr 1fr; }
       .page-inner { padding: 32px 5vw 60px; }
-      .services-cards { grid-template-columns: 1fr; }
       .form-row { grid-template-columns: 1fr; }
       .contact-card { padding: 24px 18px; }
     }
@@ -408,8 +434,8 @@
   </ul>
 
   <div class="nav-controls">
-    <!-- Language Toggle -->
-    <div class="lang-toggle">
+    <!-- Language Toggle (Desktop) -->
+    <div class="lang-toggle nav-lang">
       <button class="lang-btn active" id="lang-de" onclick="setLang('de')">🇩🇪 DE</button>
       <button class="lang-btn" id="lang-en" onclick="setLang('en')">🇬🇧 EN</button>
       <button class="lang-btn" id="lang-pl" onclick="setLang('pl')">🇵🇱 PL</button>
@@ -434,18 +460,24 @@
   <button onclick="showPage('leistungen');closeMobileMenu()" data-de="Leistungen" data-en="Services" data-pl="Usługi" data-cz="Služby">Leistungen</button>
   <button onclick="showPage('ueber');closeMobileMenu()" data-de="Über uns" data-en="About" data-pl="O nas" data-cz="O nás">Über uns</button>
   <button onclick="showPage('kontakt');closeMobileMenu()" data-de="Kontakt" data-en="Contact" data-pl="Kontakt" data-cz="Kontakt">Kontakt</button>
-  <div class="mob-controls">
-    <div class="lang-toggle">
-      <button class="lang-btn active" id="mob-lang-de" onclick="setLang('de')">🇩🇪 DE</button>
-      <button class="lang-btn" id="mob-lang-en" onclick="setLang('en')">🇬🇧 EN</button>
-      <button class="lang-btn" id="mob-lang-pl" onclick="setLang('pl')">🇵🇱 PL</button>
-      <button class="lang-btn" id="mob-lang-cz" onclick="setLang('cz')">🇨🇿 CZ</button>
-    </div>
+
+  <!-- Sprache – 2×2 Grid -->
+  <div class="mob-lang-grid">
+    <button class="lang-btn active" id="mob-lang-de" onclick="setLang('de')">🇩🇪 Deutsch</button>
+    <button class="lang-btn" id="mob-lang-en" onclick="setLang('en')">🇬🇧 English</button>
+    <button class="lang-btn" id="mob-lang-pl" onclick="setLang('pl')">🇵🇱 Polski</button>
+    <button class="lang-btn" id="mob-lang-cz" onclick="setLang('cz')">🇨🇿 Čeština</button>
+  </div>
+
+  <!-- Dark Mode -->
+  <div class="mob-theme-row">
+    <span class="mob-theme-label" data-de="🌙 Dunkelmodus" data-en="🌙 Dark Mode" data-pl="🌙 Tryb ciemny" data-cz="🌙 Tmavý režim">🌙 Dunkelmodus</span>
     <button class="theme-toggle" onclick="toggleTheme()" aria-label="Dark Mode">
       <span class="theme-icon sun">☀️</span>
       <span class="theme-icon moon">🌙</span>
     </button>
   </div>
+
   <button class="mob-cta" onclick="window.location='tel:035126050772'">📞 0351 / 26 05 07 72</button>
 </div>
 
