@@ -110,24 +110,23 @@
       box-shadow: 0 2px 8px rgba(227,6,19,0.35);
     }
 
-    /* Mobile Flaggen-Leiste in Navbar */
+    /* Mobile Sprach-Button in Navbar – zeigt nur aktive Sprache */
     .nav-lang-mobile {
       display: none;
-      align-items: center; gap: 2px;
-      background: var(--surface2); border-radius: 50px;
-      padding: 3px; border: 1px solid var(--border);
+      align-items: center;
     }
-    .nav-lang-mobile .flag-btn {
-      font-size: 1.2rem; width: 30px; height: 30px;
-      border: none; border-radius: 50px; cursor: pointer;
-      background: none; display: flex; align-items: center; justify-content: center;
-      transition: background .2s, transform .15s;
+    .lang-cycle-btn {
+      display: flex; align-items: center; gap: 4px;
+      background: var(--surface2); border: 1.5px solid var(--border);
+      border-radius: 50px; padding: 5px 10px;
+      font-size: .78rem; font-weight: 700; color: var(--text);
+      cursor: pointer; font-family: inherit;
+      transition: background .2s, border-color .2s;
+      white-space: nowrap;
     }
-    .nav-lang-mobile .flag-btn.active {
-      background: var(--red);
-      transform: scale(1.1);
-      box-shadow: 0 2px 8px rgba(227,6,19,0.4);
-    }
+    .lang-cycle-btn:hover { border-color: var(--red); color: var(--red); }
+    .lang-cycle-btn .flag-icon { font-size: 1.1rem; line-height: 1; }
+    .lang-cycle-btn .lang-code { font-size: .72rem; font-weight: 800; }
 
     /* Dark Mode Toggle */
     .theme-toggle {
@@ -404,8 +403,8 @@
 
     @media (max-width: 580px) {
       .logo-svg { width: 36px; height: 36px; }
-      .nav-logo-text .name { font-size: .88rem; }
-      .nav-logo-text .sub { font-size: .55rem; }
+      /* Logo-Text auf kleinen Handys ausblenden – nur Icon */
+      .nav-logo-text { display: none; }
       .theme-toggle { width: 46px; height: 25px; }
       .theme-toggle::before { width: 17px; height: 17px; }
       [data-theme="dark"] .theme-toggle::before { transform: translateX(21px); }
@@ -471,12 +470,13 @@
     <a href="tel:035126050772" class="nav-cta">📞 0351 / 26 05 07 72</a>
   </div>
 
-  <!-- Flaggen nur auf Mobile sichtbar -->
+  <!-- Einzelner Sprach-Cycle-Button auf Mobile -->
   <div class="nav-lang-mobile" id="navLangMobile">
-    <button class="flag-btn active" id="mob-flag-de" onclick="setLang('de')" title="Deutsch">🇩🇪</button>
-    <button class="flag-btn" id="mob-flag-en" onclick="setLang('en')" title="English">🇬🇧</button>
-    <button class="flag-btn" id="mob-flag-pl" onclick="setLang('pl')" title="Polski">🇵🇱</button>
-    <button class="flag-btn" id="mob-flag-cz" onclick="setLang('cz')" title="Čeština">🇨🇿</button>
+    <button class="lang-cycle-btn" id="langCycleBtn" onclick="cycleLang()">
+      <span id="cycleFlag" style="font-size:1.2rem;line-height:1;">🇩🇪</span>
+      <span id="cycleLangCode" style="font-size:.72rem;font-weight:800;">DE</span>
+      <span style="font-size:.55rem;opacity:.4;margin-left:1px;">▼</span>
+    </button>
   </div>
 
   <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
@@ -740,11 +740,23 @@
 
     document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
     document.querySelectorAll('#lang-' + l + ', #mob-lang-' + l).forEach(b => b.classList.add('active'));
-    // Mobile Flaggen in Navbar aktualisieren
-    document.querySelectorAll('.flag-btn').forEach(b => b.classList.remove('active'));
-    document.querySelectorAll('#mob-flag-' + l).forEach(b => b.classList.add('active'));
+    // Mobile Cycle-Button aktualisieren
+    const flags = { de:'🇩🇪', en:'🇬🇧', pl:'🇵🇱', cz:'🇨🇿' };
+    const codes = { de:'DE', en:'EN', pl:'PL', cz:'CZ' };
+    const cf = document.getElementById('cycleFlag');
+    const cc = document.getElementById('cycleLangCode');
+    if (cf) cf.textContent = flags[l];
+    if (cc) cc.textContent = codes[l];
 
     document.documentElement.lang = l;
+  }
+
+  // Sprachen durchschalten beim Tippen
+  const langOrder = ['de','en','pl','cz'];
+  function cycleLang() {
+    const idx = langOrder.indexOf(lang);
+    const next = langOrder[(idx + 1) % langOrder.length];
+    setLang(next);
   }
 
   // Apply saved lang on load
