@@ -67,11 +67,15 @@
       backdrop-filter: blur(16px);
       border-bottom: 3px solid var(--red);
       box-shadow: 0 2px 20px var(--shadow);
-      gap: 12px;
+      gap: 8px;
       transition: background .3s, box-shadow .3s;
+      overflow: hidden;
     }
 
-    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; cursor: pointer; flex-shrink: 0; }
+    /* Logo nimmt verfügbaren Platz, schrumpft wenn nötig */
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; cursor: pointer; flex: 1; min-width: 0; overflow: hidden; }
+    .nav-logo-text { overflow: hidden; min-width: 0; }
+    .nav-logo-text .name { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .nav-logo-text .sub { font-size: .62rem; font-weight: 700; color: var(--red); letter-spacing: .5px; text-transform: uppercase; }
     .nav-logo-text .name { font-size: 1rem; font-weight: 900; color: var(--text); letter-spacing: -.3px; transition: color .3s; }
     .logo-svg { width: 44px; height: 44px; flex-shrink: 0; }
@@ -88,7 +92,10 @@
     .nav-links button.active { color: var(--red); background: rgba(227,6,19,0.08); }
 
     /* ── NAV RIGHT CONTROLS ── */
-    .nav-controls { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+    .nav-controls { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+
+    /* Mobile Rechte Gruppe – nie schrumpfen */
+    .nav-right-mobile { display: none; align-items: center; gap: 6px; flex-shrink: 0; }
 
     /* Language Toggle */
     .lang-toggle {
@@ -388,6 +395,9 @@
       /* Desktop lang-toggle ausblenden, mobile version anzeigen */
       .nav-lang { display: none; }
       .nav-lang-mobile { display: flex; }
+      .nav-right-mobile { display: flex; }
+      /* Desktop nav-controls ausblenden auf mobile */
+      .nav-controls { display: none; }
       .hamburger { display: flex; }
       .fab-call { display: flex; }
       .hero { grid-template-columns: 1fr; }
@@ -470,16 +480,21 @@
     <a href="tel:035126050772" class="nav-cta">📞 0351 / 26 05 07 72</a>
   </div>
 
-  <!-- Einzelner Sprach-Cycle-Button auf Mobile -->
-  <div class="nav-lang-mobile" id="navLangMobile">
-    <button class="lang-cycle-btn" id="langCycleBtn" onclick="cycleLang()">
-      <span id="cycleFlag" style="font-size:1.2rem;line-height:1;">🇩🇪</span>
-      <span id="cycleLangCode" style="font-size:.72rem;font-weight:800;">DE</span>
-      <span style="font-size:.55rem;opacity:.4;margin-left:1px;">▼</span>
+  <!-- Mobile: Theme + Sprache + Hamburger als feste Gruppe -->
+  <div class="nav-right-mobile">
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Dark Mode">
+      <span class="theme-icon sun">☀️</span>
+      <span class="theme-icon moon">🌙</span>
     </button>
+    <div class="nav-lang-mobile" id="navLangMobile">
+      <button class="lang-cycle-btn" id="langCycleBtn" onclick="cycleLang()">
+        <span id="cycleFlag" style="font-size:1.15rem;line-height:1;">🇩🇪</span>
+        <span id="cycleLangCode" style="font-size:.7rem;font-weight:800;">DE</span>
+        <span style="font-size:.5rem;opacity:.4;">▼</span>
+      </button>
+    </div>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
   </div>
-
-  <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
 </nav>
 
 <!-- MOBILE MENU -->
