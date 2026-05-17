@@ -27,7 +27,7 @@
       --nav-bg: rgba(255,255,255,0.88);
       --card-bg: #ffffff;
       --card-hover: #f6f6f6;
-      --hero-bg: #0d0d0d;
+      --hero-bg: #f8f8f8;
       --dark-card: #161616;
       --shadow-sm: 0 2px 12px rgba(0,0,0,0.07);
       --shadow: 0 4px 28px rgba(0,0,0,0.10);
@@ -309,22 +309,26 @@
     .hero::before {
       content: ''; position: absolute; inset: 0;
       background:
-        radial-gradient(ellipse 60% 60% at 70% 50%, rgba(200,0,13,0.08) 0%, transparent 70%),
-        repeating-linear-gradient(90deg,rgba(200,0,13,0.03) 0,rgba(200,0,13,0.03) 1px,transparent 1px,transparent 80px),
-        repeating-linear-gradient(0deg,rgba(200,0,13,0.03) 0,rgba(200,0,13,0.03) 1px,transparent 1px,transparent 80px);
+        radial-gradient(ellipse 60% 60% at 70% 50%, rgba(200,0,13,0.06) 0%, transparent 70%),
+        repeating-linear-gradient(90deg,rgba(200,0,13,0.04) 0,rgba(200,0,13,0.04) 1px,transparent 1px,transparent 80px),
+        repeating-linear-gradient(0deg,rgba(200,0,13,0.04) 0,rgba(200,0,13,0.04) 1px,transparent 1px,transparent 80px);
     }
     .hero-content { padding: 72px 5vw 72px 7vw; position: relative; z-index: 1; }
     .hero-badge {
       display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(200,0,13,0.12); color: var(--red);
+      background: rgba(200,0,13,0.10); color: var(--red);
       font-size: .67rem; font-weight: 700; letter-spacing: 1.8px;
-      padding: 5px 13px; border-radius: 3px; border: 1px solid rgba(200,0,13,0.28);
+      padding: 5px 13px; border-radius: 3px; border: 1px solid rgba(200,0,13,0.25);
       margin-bottom: 22px; text-transform: uppercase;
     }
-    .hero h1 { font-size: clamp(2rem, 3vw, 3.1rem); font-weight: 900; line-height: 1.08; letter-spacing: -1.2px; color: #fff; margin-bottom: 8px; }
+    /* Hero text: dark in light mode, light in dark mode */
+    .hero h1 { font-size: clamp(2rem, 3vw, 3.1rem); font-weight: 900; line-height: 1.08; letter-spacing: -1.2px; color: var(--text); margin-bottom: 8px; }
+    [data-theme="dark"] .hero h1 { color: #fff; }
     .hero h1 .hl { color: var(--red); }
-    .hero-sub { font-size: .92rem; font-weight: 700; color: rgba(255,255,255,0.38); margin-bottom: 18px; letter-spacing: 1px; text-transform: uppercase; font-size: .7rem; }
-    .hero p { font-size: .9rem; color: rgba(255,255,255,0.55); line-height: 1.8; max-width: 440px; margin-bottom: 34px; }
+    .hero-sub { font-size: .7rem; font-weight: 700; color: var(--text2); margin-bottom: 18px; letter-spacing: 1px; text-transform: uppercase; }
+    [data-theme="dark"] .hero-sub { color: rgba(255,255,255,0.38); }
+    .hero p { font-size: .9rem; color: var(--text2); line-height: 1.8; max-width: 440px; margin-bottom: 34px; }
+    [data-theme="dark"] .hero p { color: rgba(255,255,255,0.55); }
     .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
     .btn-primary {
       background: linear-gradient(135deg, var(--red) 0%, var(--red-dark) 100%);
@@ -337,20 +341,23 @@
     }
     .btn-primary:hover { box-shadow: 0 7px 28px rgba(200,0,13,0.5); transform: translateY(-1px); }
     .btn-secondary {
-      background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.75);
+      background: rgba(0,0,0,0.05); color: var(--text);
       padding: 13px 24px; border-radius: var(--radius-sm);
       font-size: .88rem; font-weight: 600;
-      border: 1.5px solid rgba(255,255,255,0.14);
+      border: 1.5px solid var(--border);
       display: inline-flex; align-items: center; gap: 7px;
       transition: border-color .2s, color .2s, background .2s; cursor: pointer; font-family: inherit;
-      backdrop-filter: blur(4px);
     }
-    .btn-secondary:hover { border-color: var(--red); color: #fff; background: rgba(200,0,13,0.12); }
-    .hero-stats { display: flex; gap: 36px; margin-top: 44px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.08); flex-wrap: wrap; }
+    [data-theme="dark"] .btn-secondary { background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.75); border-color: rgba(255,255,255,0.14); }
+    .btn-secondary:hover { border-color: var(--red); color: var(--red); background: rgba(200,0,13,0.07); }
+    .hero-stats { display: flex; gap: 36px; margin-top: 44px; padding-top: 30px; border-top: 1px solid var(--border); flex-wrap: wrap; }
+    [data-theme="dark"] .hero-stats { border-top-color: rgba(255,255,255,0.08); }
     .stat-num { font-size: 1.85rem; font-weight: 900; color: var(--red); display: block; line-height: 1; }
-    .stat-label { font-size: .7rem; color: rgba(255,255,255,0.38); font-weight: 500; margin-top: 5px; letter-spacing: .5px; text-transform: uppercase; }
+    .stat-label { font-size: .7rem; color: var(--text2); font-weight: 500; margin-top: 5px; letter-spacing: .5px; text-transform: uppercase; }
+    [data-theme="dark"] .stat-label { color: rgba(255,255,255,0.38); }
     .hero-visual-side { display: flex; align-items: center; justify-content: center; }
-    .hero-logo-large { opacity: .07; }
+    .hero-logo-large { opacity: .10; }
+    [data-theme="dark"] .hero-logo-large { opacity: .07; }
     .hero-logo-large svg { width: 300px; height: 300px; }
 
     .stripe {
@@ -619,14 +626,14 @@
       <div class="hero-visual-side">
         <div class="hero-logo-large">
           <svg viewBox="0 0 100 100">
-            <circle cx="50" cy="50" r="46" fill="none" stroke="white" stroke-width="6.5"/>
+            <circle cx="50" cy="50" r="46" fill="none" stroke="var(--text)" stroke-width="6.5"/>
             <rect x="22" y="30" width="22" height="11" rx="2" fill="#c8000d"/>
             <rect x="48" y="30" width="22" height="11" rx="2" fill="#c8000d"/>
             <rect x="14" y="45" width="22" height="11" rx="2" fill="#c8000d"/>
             <rect x="40" y="45" width="22" height="11" rx="2" fill="#c8000d"/>
             <rect x="22" y="60" width="22" height="11" rx="2" fill="#c8000d"/>
             <rect x="48" y="60" width="16" height="11" rx="2" fill="#c8000d"/>
-            <line x1="62" y1="66" x2="80" y2="82" stroke="white" stroke-width="8" stroke-linecap="round"/>
+            <line x1="62" y1="66" x2="80" y2="82" stroke="var(--text)" stroke-width="8" stroke-linecap="round"/>
           </svg>
         </div>
       </div>
